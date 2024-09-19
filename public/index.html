@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<!--Jayven Cachola-->
+<!--Borrowed some dropdown menu code from W3schools and ChatGPT-->
+
+<body>
+
+  <!--CSS file-->
+  <head>
+    <link rel="stylesheet" href="stylesheets/styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="javascripts/cheesecake.js"></script>
+  </head>
+
+  <h1 class="display-order">
+    Your order has been placed!
+    Thank you for your business!
+  </h1>
+  <p class="display-order" id="order-details"></p>
+  <br>
+  <p class="display-order" id="order-notes"></p>
+  <!-- This tag is only used for the mock.test.js file -->
+  <!-- Easiest way I could think of to make the test work since I have
+       two h1 tags -->
+  <h1 class="testing-js">Cheesecake Order Form</h1>
+  <h1 class="hide-on-click">
+    Cheesecake Order Form
+  </h1>
+
+  <!--Link to Cheesecake image-->
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Mondays_at_Il_Forno_-_Cheesecake_with_strawberry_sauce.jpg"
+    width="200" height="200" class="hide-on-click">
+
+  <!--Use form tag since we want info from user-->
+  <form class="hide-on-click">
+    <label for="toppingnumber" id="topping-text">Quantity Topping</label>
+    <!--Use table tag to format-->
+    <table>
+      <tr>
+        <td>
+          <!--Drop down menu options-->
+          <select name="toppingnumber" id="toppingnumber">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </td>
+        <!--Insert multiple empty cells to get spacing-->
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="options">
+          <!--Flavor Options-->
+          <label for="plain" class="buttons">
+            <input type="radio" name="topping" id="plain" value="plain">
+            <span id="plain-text">Plain</span><br>
+          </label>
+          <label for="cherry" class="buttons">
+            <input type="radio" name="topping" id="cherry" value="cherry">
+            <span id="cherry-text">Cherry</span><br>
+          </label>
+          <label for="chocolate" class="buttons">
+            <input type="radio" name="topping" id="chocolate" value="chocolate">
+            <span id="chocolate-text">Chocolate</span><br>
+          </label>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+  <!--Textarea tag for notes section-->
+  <form>
+    <label for="notes" id="notes-text" class="hide-on-click">Notes:</label>
+    <br>
+    <textarea id="notes" name="notes" placeholder="Enter any special instructions." rows="4" cols="50" maxlength="200"
+      class="hide-on-click"></textarea>
+  </form>
+  <br>
+  <button id="order-button" type="button" class="hide-on-click">Order</button>
+  <br>
+
+  <!-- Make dropdown menu with the button in the header text -->
+  <div class="dropdown" id="dropdown">
+    <h3 class="h3-dropdown" id="h3-dropdown">Orders for
+      <Button id="h3-button" class="dropbtn">Jan</Button>
+      <div class="dropdown-content" id="dropdown-content">
+        <a class="dropdown-option">Jan</a>
+        <a class="dropdown-option">Feb</a>
+        <a class="dropdown-option">Mar</a>
+        <a class="dropdown-option">Apr</a>
+        <a class="dropdown-option">May</a>
+        <a class="dropdown-option">Jun</a>
+        <a class="dropdown-option">Jul</a>
+        <a class="dropdown-option">Aug</a>
+        <a class="dropdown-option">Sep</a>
+        <a class="dropdown-option">Oct</a>
+        <a class="dropdown-option">Nov</a>
+        <a class="dropdown-option">Dec</a>
+      </div>
+    </h3>
+  </div>
+
+  <!-- List past orders with ul tag -->
+  <ul id="orders-list">
+    <li>11 cherry</li>
+    <li>17 chocolate</li>
+    <li>31 plain</li>
+  </ul>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+/*Jayven Cachola*/
+/*Borrowed some dropdown menu code from W3schools and ChatGPT*/
+
+body {
+   background-color: #E6CC87;
+}
+
+h1,
+#topping-text,
+#notes-text,
+h3,
+p.display-order,
+#h3-button {
+   color: #FF5733;
+   font-family: "Times New Roman", Times, serif;
+   text-shadow: 0 0 0.1em yellow;
+}
+
+#h3-button {
+   background-image: none;
+   background-color: #E6CC87;
+   font-size: 1.1em;
+   border-radius: 0.5em;
+   border: 0.1em solid #FF5733;
+}
+
+#h3-button:hover {
+   background-color: #FF5733;
+   color: #E6CC87;
+}
+
+.buttons {
+   accent-color: black;
+   font-family: Cursive;
+}
+
+/*Change the radio buttons when they are
+hovered over or clicked on*/
+input[type="radio"]:checked+#plain-text,
+input[type="radio"]:hover+#plain-text {
+   font-weight: bold;
+   color: #B58D21;
+   filter: brightness(150%);
+   text-shadow: 0 0 0.2em black;
+}
+
+input[type="radio"]:checked+#cherry-text,
+input[type="radio"]:hover+#cherry-text {
+   font-weight: bold;
+   color: red;
+   filter: brightness(150%);
+   text-shadow: 0 0 0.2em black;
+}
+
+input[type="radio"]:checked+#chocolate-text,
+input[type="radio"]:hover+#chocolate-text {
+   font-weight: bold;
+   color: brown;
+   text-shadow: 0 0 0.2em black;
+}
+
+/*Customize the list elements*/
+li {
+   padding: 0 3px;
+   font-family: Fantasy;
+   text-shadow: 0 0 0.1em black;
+}
+
+li:nth-child(1) {
+   color: red;
+   filter: brightness(150%);
+}
+
+li:nth-child(2) {
+   color: brown;
+}
+
+li:nth-child(3) {
+   color: #B58D21;
+   filter: brightness(150%);
+}
+
+#toppingnumber {
+   font-family: Cursive;
+}
+
+/*Customize the dropdown menu
+and only display when hovered over*/
+.dropdown {
+   position: relative;
+   display: flex;
+   max-width: fit-content;
+   max-height: fit-content;
+}
+
+.dropdown-content {
+   display: none;
+   position: absolute;
+   background-color: #f1f1f1;
+   min-width: 160px;
+   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+   text-shadow: none;
+   z-index: 1;
+   max-height: 100px;
+   overflow-y: auto;
+   left: 130px;
+}
+
+.dropdown-content a {
+   color: black;
+   padding: 12px 16px;
+   text-decoration: none;
+   display: block;
+}
+
+.dropdown-content a:hover {
+   background-color: #ddd;
+}
+
+.dropdown .dropdown-content {
+   display: none;
+}
+
+/* Only display when the button is hovered over */
+.dropdown-content:hover {
+   display: block;
+}
+
+.h3-dropdown #h3-button:hover + .dropdown-content {
+   display: block;
+}
