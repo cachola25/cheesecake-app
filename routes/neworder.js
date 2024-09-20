@@ -12,7 +12,8 @@ router.get('/', function(req, res, next) {
 router.post("/", function (req, res, next) {
 
     const orderID = Math.floor(Math.random() * 10000);
-    const month = new Date().toLocaleString('default', { month: 'short' }).toUpperCase();
+    // const month = new Date().toLocaleString('default', { month: 'short' }).toUpperCase();
+    const month = "JAN";
     const lastDayOfMonth = new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0).getDate();
     const day = Math.floor(Math.random() * lastDayOfMonth) + 1;
 

@@ -66,7 +66,7 @@ $(function () {
     }
     var toppingVal = $("input[name=topping]:checked").val();
     var quantityVal = $("#toppingnumber").val();
-    
+
     if (toppingVal != undefined) {
       $(".hide-on-click").hide();
       $(".display-order").show();
@@ -119,4 +119,6 @@ $(function () {
   $("#h3-button").on("mouseleave", dropdownLeaveHandler);
   $("#dropdown-content").on("mouseover", dropdownHoverHandler);
   $("#dropdown-content").on("mouseleave", dropdownLeaveHandler);
+
+  handleMonthClick("Jan", h3Button);
 });

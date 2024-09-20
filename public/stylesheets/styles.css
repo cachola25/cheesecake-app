@@ -66,8 +66,9 @@ li {
    text-shadow: 0 0 0.1em black;
 }
 
+
 li:nth-child(1) {
-   color: red;
+   color: #B58D21;
    filter: brightness(150%);
 }
 
@@ -76,10 +77,9 @@ li:nth-child(2) {
 }
 
 li:nth-child(3) {
-   color: #B58D21;
+   color: red;
    filter: brightness(150%);
 }
-
 #toppingnumber {
    font-family: Cursive;
 }

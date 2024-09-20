@@ -1,23 +1,10 @@
 /*Author: Jayven Cachola*/
 
-/* NOTE: 
-    The HW#5 specifications do not work, I am submitting 
-    what I think would work for this specification
-    I kept getting this error: 
-    "Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client"
-    I tried to fix it but I couldn't find a solution
-    I also tried to use the mysql2 package but I couldn't get it to work
-*/
 
 var express = require("express");
 var router = express.Router();
 var dbms = require("./dbms").dbquery;
 
-const orders = [
-  {topping: 'cherry', quantity: 2},
-  {topping: 'plain', quantity: 6},
-  {topping: 'chocolate', quantity: 3}
-]
 
 router.get('/', function(req, res, next) {
   res.send("Placeholder");
@@ -27,7 +14,7 @@ router.get('/', function(req, res, next) {
 // Create sql query to send to the database for each month
 router.post("/Jan", function (req, res, next) {
 
-  let query = "SELECT SUM(QUANTITY) AS QUANTITY, TOPPING FROM ORDERS WHERE MONTH = 'JAN' GROUP BY TOPPING";
+  let query = "SELECT SUM(QUANTITY) AS QUANTITY, TOPPING FROM ORDERS WHERE MONTH = 'JAN' GROUP BY TOPPING ORDER BY FIELD(TOPPING, 'plain', 'chocolate', 'cherry');";
   dbms(query,(err, result) => {
     if (err) {
       console.log(err);
