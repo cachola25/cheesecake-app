@@ -34,6 +34,22 @@ function handleMonthClick(month, h3Button) {
   });
 }
 
+function sendOrder(orderData) {
+  // Make the POST request to send order data
+  $.ajax({
+    type: "POST",
+    url: "http://localhost:3000/neworder",  // Adjust URL to match your route
+    data: JSON.stringify(orderData),
+    contentType: "application/json",
+    success: function (response) {
+      console.log("Order saved successfully:", response);
+    },
+    error: function (response) {
+      console.error("Error saving order:", response);
+      alert("There was an error placing your order.");
+    }
+  });
+}
 $(function () {
   // Hide order details initially
   $(".testing-js").hide();
@@ -49,6 +65,8 @@ $(function () {
       return;
     }
     var toppingVal = $("input[name=topping]:checked").val();
+    var quantityVal = $("#toppingnumber").val();
+    
     if (toppingVal != undefined) {
       $(".hide-on-click").hide();
       $(".display-order").show();
@@ -58,6 +76,14 @@ $(function () {
       if (notes != "") {
         $("p#order-notes.display-order").text("Notes: " + notes);
       }
+
+      var orderData = {
+        quantity: quantityVal,
+        topping: toppingVal,
+        notes: notes
+      };
+
+      sendOrder(orderData);
     } else {
       alert("Please select a flavor.");
     }
