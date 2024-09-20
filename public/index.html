@@ -3,6 +3,17 @@
 <!--Jayven Cachola-->
 <!--Borrowed some dropdown menu code from W3schools and ChatGPT-->
 
+<!-- NOTE: 
+    The HW#5 specifications do not work, I am submitting 
+    what I think would work for this specification
+    I kept getting this error: 
+    "Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client"
+    I tried to fix it but I couldn't find a solution
+    I also tried to use the mysql2 package but I couldn't get it to work
+ -->
+
+
+
 <body>
 
   <!--CSS file-->
@@ -40,7 +51,7 @@
       <tr>
         <td>
           <!--Drop down menu options-->
-          <select name="toppingnumber" id="toppingnumber">
+          <select name="toppingnumber" id="toppingnumber" method="POST">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -54,7 +65,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td class="options">
+        <td class="options" method="POST">
           <!--Flavor Options-->
           <label for="plain" class="buttons">
             <input type="radio" name="topping" id="plain" value="plain">
@@ -78,7 +89,7 @@
     <label for="notes" id="notes-text" class="hide-on-click">Notes:</label>
     <br>
     <textarea id="notes" name="notes" placeholder="Enter any special instructions." rows="4" cols="50" maxlength="200"
-      class="hide-on-click"></textarea>
+      class="hide-on-click" method="POST"></textarea>
   </form>
   <br>
   <button id="order-button" type="button" class="hide-on-click">Order</button>
@@ -89,18 +100,18 @@
     <h3 class="h3-dropdown" id="h3-dropdown">Orders for
       <Button id="h3-button" class="dropbtn">Jan</Button>
       <div class="dropdown-content" id="dropdown-content">
-        <a class="dropdown-option">Jan</a>
-        <a class="dropdown-option">Feb</a>
-        <a class="dropdown-option">Mar</a>
-        <a class="dropdown-option">Apr</a>
-        <a class="dropdown-option">May</a>
-        <a class="dropdown-option">Jun</a>
-        <a class="dropdown-option">Jul</a>
-        <a class="dropdown-option">Aug</a>
-        <a class="dropdown-option">Sep</a>
-        <a class="dropdown-option">Oct</a>
-        <a class="dropdown-option">Nov</a>
-        <a class="dropdown-option">Dec</a>
+        <a class="dropdown-option" id="Jan">Jan</a>
+        <a class="dropdown-option" id="Feb">Feb</a>`
+        <a class="dropdown-option" id="Mar">Mar</a>
+        <a class="dropdown-option" id="Apr">Apr</a>
+        <a class="dropdown-option" id="May">May</a>
+        <a class="dropdown-option" id="Jun">Jun</a>
+        <a class="dropdown-option" id="Jul">Jul</a>
+        <a class="dropdown-option" id="Aug">Aug</a>
+        <a class="dropdown-option" id="Sep">Sep</a>
+        <a class="dropdown-option" id="Oct">Oct</a>
+        <a class="dropdown-option" id="Nov">Nov</a>
+        <a class="dropdown-option" id="Dec">Dec</a>
       </div>
     </h3>
   </div>
@@ -108,8 +119,8 @@
   <!-- List past orders with ul tag -->
   <ul id="orders-list">
     <li>11 cherry</li>
-    <li>17 chocolate</li>
     <li>31 plain</li>
+    <li>17 chocolate</li>
   </ul>
 </body>
 
